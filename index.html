@@ -44,11 +44,13 @@ h2{font-size:28px;margin-bottom:8px}
 .person h3{font-size:20px}
 .role{color:var(--accent2);font-size:14px;margin-bottom:8px}
 .person ul{padding-left:18px;color:var(--mute);font-size:14px}
+.topics{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--accent2);margin-bottom:10px}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:14px;text-align:center}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>Production AI</b><div><a href="#what">What we do</a><a href="#videos">Videos</a><a href="#team">Team</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap"><b>Production AI</b><div><a href="#what">What we do</a><a href="#topics">Topics</a><a href="#videos">Videos</a><a href="#team">Team</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero"><div class="wrap">
 <h1>We make AI <span>work in production</span></h1>
@@ -63,6 +65,20 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-si
 <div class="card"><div class="icon">🎬</div><h3>Videos</h3><p>Short Hebrew explainers that make hard AI engineering ideas click in under a minute.</p></div>
 <div class="card"><div class="icon">🛠️</div><h3>Workshops</h3><p>Hands-on sessions where your team builds a working agent and leaves with the code.</p></div>
 <div class="card"><div class="icon">🤖</div><h3>Custom agents</h3><p>We design, build and deploy agents for your product, with evals and observability from day one.</p></div>
+</div></div></section>
+
+<section id="topics"><div class="wrap">
+<h2>Workshop and lecture topics</h2><p class="sub">Each topic works as a 45 minute talk or a hands-on half day workshop.</p>
+<div class="grid topics">
+<div class="card"><span class="tag">Workshop</span><h3>Build your first agent</h3><p>From an LLM call to a tool-using agent: prompts, tools, loops and structured outputs, on AWS Bedrock.</p></div>
+<div class="card"><span class="tag">Lecture</span><h3>MCP explained</h3><p>What the Model Context Protocol is, how tool schemas steer an agent, and how to write tool descriptions that work.</p></div>
+<div class="card"><span class="tag">Workshop</span><h3>Agentic RAG</h3><p>Knowledge bases, metadata filtering, retrieval quality, and when an agent should search instead of guess.</p></div>
+<div class="card"><span class="tag">Lecture</span><h3>Memory for AI agents</h3><p>Short-term, long-term and episodic memory, and what to load into context and when.</p></div>
+<div class="card"><span class="tag">Workshop</span><h3>Text-to-SQL agents</h3><p>Let non-technical users explore data in plain language, with guardrails that keep queries correct and safe.</p></div>
+<div class="card"><span class="tag">Lecture</span><h3>Prompt injection and agent security</h3><p>Live demos of how agents get tricked, and the defenses that hold up in production.</p></div>
+<div class="card"><span class="tag">Workshop</span><h3>Evals, tracing and observability</h3><p>Measure agent quality before and after launch with eval-driven design and Langfuse-style tracing.</p></div>
+<div class="card"><span class="tag">Lecture</span><h3>From PoC to production</h3><p>The product side: scoping GenAI features, hitting 90%+ accuracy, and shipping with a cross-functional team.</p></div>
+<div class="card"><span class="tag">Lecture</span><h3>Coding agents and autonomous loops</h3><p>How agents read, edit and improve code on their own, and how to put them to work on your team.</p></div>
 </div></div></section>
 
 <section id="videos"><div class="wrap">
