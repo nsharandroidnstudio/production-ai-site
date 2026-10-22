@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Production AI | ניר שרון ודניאל נחמן</title>
+<meta name="description" content="הרצאות, סרטונים, סדנאות ובניית סוכני AI בהתאמה אישית עם ניר שרון ודניאל נחמן.">
+<style>
+:root{--bg:#0b0d14;--card:#141826;--line:#232a40;--text:#e8ecf7;--mute:#98a2c0;--accent:#7c9cff;--accent2:#5eead4}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:#0b0d14ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{letter-spacing:.3px}
+nav div a{margin-right:20px;color:var(--mute);font-size:14px}
+nav div a:hover{color:var(--text)}
+.hero{padding:96px 0 64px;text-align:center}
+.hero h1{font-size:clamp(34px,7vw,60px);line-height:1.2;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);max-width:620px;margin:0 auto 28px;font-size:18px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--accent);color:#0b0d14;font-weight:600}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text);margin-right:10px}
+section{padding:56px 0}
+h2{font-size:28px;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:28px}
+.grid{display:grid;gap:18px}
+.offers{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{color:var(--mute);font-size:15px}
+.icon{font-size:28px;margin-bottom:10px}
+.videos{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.vid{padding:0;overflow:hidden}
+.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
+.vid .t{padding:14px 16px}
+.vid h3{font-size:15px}
+.vid p{font-size:13px;color:var(--mute)}
+.people{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.person{display:flex;gap:18px;align-items:flex-start}
+.person img{width:104px;height:104px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
+.person h3{font-size:20px}
+.role{color:var(--accent2);font-size:14px;margin-bottom:8px}
+.person ul{padding-right:18px;color:var(--mute);font-size:14px}
+.topics{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--accent2);margin-bottom:10px}
+.in{display:inline-block;margin-top:10px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Production AI</b><div><a href="#what">מה אנחנו עושים</a><a href="#topics">נושאים</a><a href="#videos">סרטונים</a><a href="#team">הצוות</a><a href="#contact">יצירת קשר</a><a href="index.html" hreflang="en">English</a></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>מביאים AI <span>לעבוד בפרודקשן</span></h1>
+<p>הרצאות, סרטונים, סדנאות ובניית סוכני AI, משני אנשי מקצוע שמפעילים אותם בעבודה היומיומית.</p>
+<a class="btn" href="#videos">לצפייה בסרטונים</a><a class="btn ghost" href="#contact">בואו נעבוד ביחד</a>
+</div></header>
+
+<section id="what"><div class="wrap">
+<h2>מה אנחנו עושים</h2><p class="sub">הנדסת AI מעשית, מוסברת בפשטות ונבנית כמו שצריך.</p>
+<div class="grid offers">
+<div class="card"><div class="icon">🎤</div><h3>הרצאות</h3><p>הרצאות על סוכנים, MCP, RAG ובניית מוצרי AI, לצוותים, למיטאפים ולכיתות.</p></div>
+<div class="card"><div class="icon">🎬</div><h3>סרטונים</h3><p>סרטונים קצרים בעברית שהופכים רעיונות מורכבים בהנדסת AI לברורים בפחות מדקה.</p></div>
+<div class="card"><div class="icon">🛠️</div><h3>סדנאות</h3><p>סדנאות מעשיות שבהן הצוות שלכם בונה סוכן עובד ויוצא עם הקוד ביד.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>סוכנים בהתאמה אישית</h3><p>מתכננים, בונים ומפעילים סוכנים למוצר שלכם, עם הערכת איכות ותצפית מהיום הראשון.</p></div>
+</div></div></section>
+
+<section id="topics"><div class="wrap">
+<h2>נושאים להרצאות ולסדנאות</h2><p class="sub">כל נושא זמין כהרצאה של 45 דקות או כסדנה מעשית של חצי יום.</p>
+<div class="grid topics">
+<div class="card"><span class="tag">סדנה</span><h3>בונים את הסוכן הראשון</h3><p>מקריאת LLM פשוטה ועד סוכן שמשתמש בכלים: פרומפטים, כלים, לולאות ופלט מובנה על AWS Bedrock.</p></div>
+<div class="card"><span class="tag">הרצאה</span><h3>MCP בפשטות</h3><p>מהו Model Context Protocol, איך סכמות כלים מכוונות סוכן, ואיך כותבים תיאורי כלים שעובדים.</p></div>
+<div class="card"><span class="tag">סדנה</span><h3>Agentic RAG</h3><p>מאגרי ידע, סינון לפי מטא-דאטה, איכות שליפה, ומתי סוכן צריך לחפש ולא לנחש.</p></div>
+<div class="card"><span class="tag">הרצאה</span><h3>זיכרון לסוכני AI</h3><p>זיכרון קצר טווח, ארוך טווח ואפיזודי, ומה לטעון להקשר ומתי.</p></div>
+<div class="card"><span class="tag">סדנה</span><h3>סוכני Text-to-SQL</h3><p>נותנים למשתמשים לא טכניים לחקור נתונים בשפה חופשית, עם מנגנוני הגנה ששומרים על שאילתות נכונות ובטוחות.</p></div>
+<div class="card"><span class="tag">הרצאה</span><h3>Prompt injection ואבטחת סוכנים</h3><p>דמואים חיים של איך מרמים סוכנים, וההגנות שעומדות בפרודקשן.</p></div>
+<div class="card"><span class="tag">סדנה</span><h3>הערכת איכות, tracing ותצפית</h3><p>מודדים איכות סוכן לפני ואחרי ההשקה עם eval-driven design ו-tracing בסגנון Langfuse.</p></div>
+<div class="card"><span class="tag">הרצאה</span><h3>מ-PoC לפרודקשן</h3><p>הצד המוצרי: הגדרת פיצ'רי GenAI, הגעה ליותר מ-90% דיוק, והשקה עם צוות רב-תחומי.</p></div>
+<div class="card"><span class="tag">הרצאה</span><h3>סוכני קוד ולולאות אוטונומיות</h3><p>איך סוכנים קוראים, עורכים ומשפרים קוד לבד, ואיך מכניסים אותם לעבודה בצוות שלכם.</p></div>
+</div></div></section>
+
+<section id="videos"><div class="wrap">
+<h2>הסרטונים שלנו</h2><p class="sub">הסברים קצרים בעברית. לחצו להפעלה.</p>
+<div class="grid videos">
+<div class="card vid"><video controls preload="none" playsinline poster="posters/mcp-explained.jpg" src="videos/mcp-explained.mp4"></video><div class="t"><h3>מה זה MCP?</h3><p>איך תקן אחד מחבר כלים לכל סוכן AI.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/mcp-tool-schema.jpg" src="videos/mcp-tool-schema.mp4"></video><div class="t"><h3>איך סוכן בוחר כלי</h3><p>סכמות כלים, ולמה התיאורים חשובים.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/agent-tools.jpg" src="videos/agent-tools.mp4"></video><div class="t"><h3>סוכנים והכלים שלהם</h3><p>מה מאפשר ל-LLM לפעול ולא רק לשוחח.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/autoresearch.jpg" src="videos/autoresearch.mp4"></video><div class="t"><h3>הלולאה של AutoResearch</h3><p>סוכן שקורא, עורך ומשפר קוד בעצמו.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/prompt-injection.jpg" src="videos/prompt-injection.mp4"></video><div class="t"><h3>אפשר לרמות AI?</h3><p>Prompt injection שמוסתר בקורות חיים.</p></div></div>
+</div></div></section>
+
+<section id="team"><div class="wrap">
+<h2>מי אנחנו</h2><p class="sub">שני בונים: אחד עם חשיבה מוצרית ואחד עם חשיבה הנדסית.</p>
+<div class="grid people">
+<div class="card person"><img src="img/nir.png" alt="ניר שרון"><div><h3>ניר שרון</h3><div class="role">מהנדס AI ב-Bright Data</div>
+<ul><li>בינה מלאכותית סוכנית וארכיטקטורת ענן על AWS</li><li>בעבר ב-COMMIT: בניית סוכנים בפרודקשן ל-OCR, Text-to-SQL ו-Agentic RAG</li><li>זוכה פרס החדשנות של התאחדות השיווק הישראלית 2025</li><li>תואר ראשון במדעי המחשב, סטודנט ל-MBA באוניברסיטת רייכמן</li></ul>
+<a class="in" href="https://www.linkedin.com/in/nir-sharon-b76b2b27a/" target="_blank" rel="noopener">LinkedIn ←</a></div></div>
+<div class="card person"><img src="img/daniel.jpg" alt="דניאל נחמן"><div><h3>דניאל נחמן</h3><div class="role">מנהל מוצר בכיר ל-AI ב-Wiliot</div>
+<ul><li>בעבר ב-COMMIT: השקת יותר מ-20 מוצרי GenAI וסוכנים ללקוחות B2B</li><li>למעלה מ-6 שנים, ממערכות בחיל האוויר ועד AI על AWS</li><li>תואר שני בהנדסת מערכות, תואר ראשון בהנדסת אווירונאוטיקה</li></ul>
+<a class="in" href="https://www.linkedin.com/in/daniel-nahman-990b09152/" target="_blank" rel="noopener">LinkedIn ←</a></div></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap" style="text-align:center">
+<h2>בואו נבנה משהו</h2><p class="sub">רוצים הרצאה, סדנה או סוכן למוצר שלכם?</p>
+<a class="btn" href="mailto:nshar1999@gmail.com">nshar1999@gmail.com</a>
+<a class="btn ghost" href="mailto:daniel.nahman@gmail.com">daniel.nahman@gmail.com</a>
+</div></section>
+
+<footer>© 2026 Production AI · ניר שרון ודניאל נחמן</footer>
+</body>
+</html>
