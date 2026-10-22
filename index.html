@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Production AI | Nir Sharon &amp; Daniel Nahman</title>
+<meta name="description" content="Lectures, videos, workshops and custom AI agents by Nir Sharon and Daniel Nahman.">
+<style>
+:root{--bg:#0b0d14;--card:#141826;--line:#232a40;--text:#e8ecf7;--mute:#98a2c0;--accent:#7c9cff;--accent2:#5eead4}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;background:#0b0d14ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav b{letter-spacing:.3px}
+nav div a{margin-left:20px;color:var(--mute);font-size:14px}
+nav div a:hover{color:var(--text)}
+.hero{padding:96px 0 64px;text-align:center}
+.hero h1{font-size:clamp(36px,7vw,64px);line-height:1.1;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);max-width:620px;margin:0 auto 28px;font-size:18px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--accent);color:#0b0d14;font-weight:600}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text);margin-left:10px}
+section{padding:56px 0}
+h2{font-size:28px;margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:28px}
+.grid{display:grid;gap:18px}
+.offers{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:18px;margin-bottom:6px}
+.card p{color:var(--mute);font-size:15px}
+.icon{font-size:28px;margin-bottom:10px}
+.videos{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.vid{padding:0;overflow:hidden}
+.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
+.vid .t{padding:14px 16px}
+.vid h3{font-size:15px}
+.vid p{font-size:13px;color:var(--mute)}
+.people{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.person{display:flex;gap:18px;align-items:flex-start}
+.person img{width:104px;height:104px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
+.person h3{font-size:20px}
+.role{color:var(--accent2);font-size:14px;margin-bottom:8px}
+.person ul{padding-left:18px;color:var(--mute);font-size:14px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Production AI</b><div><a href="#what">What we do</a><a href="#videos">Videos</a><a href="#team">Team</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1>We make AI <span>work in production</span></h1>
+<p>Lectures, videos, workshops, and custom AI agents, from two engineers who ship them for a living.</p>
+<a class="btn" href="#videos">Watch our videos</a><a class="btn ghost" href="#contact">Work with us</a>
+</div></header>
+
+<section id="what"><div class="wrap">
+<h2>What we do</h2><p class="sub">Practical AI engineering, explained simply and built properly.</p>
+<div class="grid offers">
+<div class="card"><div class="icon">🎤</div><h3>Lectures</h3><p>Talks on agents, MCP, RAG and AI product building for teams, meetups and classrooms.</p></div>
+<div class="card"><div class="icon">🎬</div><h3>Videos</h3><p>Short Hebrew explainers that make hard AI engineering ideas click in under a minute.</p></div>
+<div class="card"><div class="icon">🛠️</div><h3>Workshops</h3><p>Hands-on sessions where your team builds a working agent and leaves with the code.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>Custom agents</h3><p>We design, build and deploy agents for your product, with evals and observability from day one.</p></div>
+</div></div></section>
+
+<section id="videos"><div class="wrap">
+<h2>Our videos</h2><p class="sub">Short explainers in Hebrew. Tap to play.</p>
+<div class="grid videos">
+<div class="card vid"><video controls preload="none" playsinline poster="posters/mcp-explained.jpg" src="videos/mcp-explained.mp4"></video><div class="t"><h3>What is MCP?</h3><p>How one standard plugs tools into any AI agent.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/mcp-tool-schema.jpg" src="videos/mcp-tool-schema.mp4"></video><div class="t"><h3>How an agent picks a tool</h3><p>Tool schemas, and why descriptions matter.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/agent-tools.jpg" src="videos/agent-tools.mp4"></video><div class="t"><h3>Agents and their tools</h3><p>What lets an LLM act, not just chat.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/autoresearch.jpg" src="videos/autoresearch.mp4"></video><div class="t"><h3>The AutoResearch loop</h3><p>An agent that reads, edits and improves code on its own.</p></div></div>
+<div class="card vid"><video controls preload="none" playsinline poster="posters/prompt-injection.jpg" src="videos/prompt-injection.mp4"></video><div class="t"><h3>Can you trick an AI?</h3><p>Prompt injection hidden in a resume.</p></div></div>
+</div></div></section>
+
+<section id="team"><div class="wrap">
+<h2>Who we are</h2><p class="sub">Two builders, one product mindset and one engineering mindset.</p>
+<div class="grid people">
+<div class="card person"><img src="img/nir.png" alt="Nir Sharon"><div><h3>Nir Sharon</h3><div class="role">AI Engineer, agentic AI and cloud</div>
+<ul><li>Built production agents at COMMIT: OCR, Text-to-SQL, agentic RAG</li><li>Won the 2025 Israeli Marketing Association Innovation Award</li><li>B.Sc. Computer Science, MBA in progress</li></ul></div></div>
+<div class="card person"><img src="img/daniel.jpg" alt="Daniel Nahman"><div><h3>Daniel Nahman</h3><div class="role">Senior AI Product Manager</div>
+<ul><li>20+ GenAI and agentic products shipped across B2B clients</li><li>6+ years from Air Force systems to AWS-based AI</li><li>M.Sc. Systems Engineering, B.Sc. Aerospace Engineering</li></ul></div></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap" style="text-align:center">
+<h2>Let's build something</h2><p class="sub">Want a talk, a workshop, or an agent for your product?</p>
+<a class="btn" href="mailto:nshar1999@gmail.com">nshar1999@gmail.com</a>
+<a class="btn ghost" href="mailto:daniel.nahman@gmail.com">daniel.nahman@gmail.com</a>
+</div></section>
+
+<footer>© 2026 Production AI · Nir Sharon &amp; Daniel Nahman</footer>
+</body>
+</html>
