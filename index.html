@@ -1,119 +1,270 @@
 <!doctype html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Production AI | Nir Sharon &amp; Daniel Nahman</title>
-<meta name="description" content="Lectures, videos, workshops and custom AI agents by Nir Sharon and Daniel Nahman.">
-<style>
-:root{--bg:#0b0d14;--card:#141826;--line:#232a40;--text:#e8ecf7;--mute:#98a2c0;--accent:#7c9cff;--accent2:#5eead4}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-a{color:var(--accent);text-decoration:none}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;background:#0b0d14ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
-nav b{letter-spacing:.3px}
-nav div a{margin-left:20px;color:var(--mute);font-size:14px}
-nav div a:hover{color:var(--text)}
-.hero{padding:96px 0 64px;text-align:center}
-.hero h1{font-size:clamp(36px,7vw,64px);line-height:1.1;margin-bottom:18px}
-.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--mute);max-width:620px;margin:0 auto 28px;font-size:18px}
-.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:var(--accent);color:#0b0d14;font-weight:600}
-.btn.ghost{background:none;border:1px solid var(--line);color:var(--text);margin-left:10px}
-section{padding:56px 0}
-h2{font-size:28px;margin-bottom:8px}
-.sub{color:var(--mute);margin-bottom:28px}
-.grid{display:grid;gap:18px}
-.offers{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-.card h3{font-size:18px;margin-bottom:6px}
-.card p{color:var(--mute);font-size:15px}
-.icon{font-size:28px;margin-bottom:10px}
-.videos{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
-.vid{padding:0;overflow:hidden}
-.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
-.vid .t{padding:14px 16px}
-.vid h3{font-size:15px}
-.vid p{font-size:13px;color:var(--mute)}
-.people{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.person{display:flex;gap:18px;align-items:flex-start}
-.person img{width:104px;height:104px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
-.person h3{font-size:20px}
-.role{color:var(--accent2);font-size:14px;margin-bottom:8px}
-.person ul{padding-left:18px;color:var(--mute);font-size:14px}
-.topics{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--accent2);margin-bottom:10px}
-.in{display:inline-block;margin-top:10px;font-size:14px}
-footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mute);font-size:14px;text-align:center}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI קל · בינה מלאכותית לבעיות של כל יום</title>
+<meta name="description" content="סרטונים קצרים בעברית שמראים איך הפיצ'רים החזקים של ChatGPT, Claude ו-Gemini פותרים בעיות של כל יום. בגובה העיניים, עם דניאל וניר.">
+<meta property="og:title" content="AI קל · בגובה העיניים">
+<meta property="og:description" content="בינה מלאכותית לבעיות של כל יום, בלי מילים מסובכות.">
+<meta name="theme-color" content="#F8FAFF">
+<link rel="icon" href="assets/ai-kal-avatar.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800;900&family=Heebo:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav><div class="wrap"><b>Production AI</b><div><a href="#what">What we do</a><a href="#projects">Projects</a><a href="#topics">Topics</a><a href="#videos">Videos</a><a href="#team">Team</a><a href="#contact">Contact</a><a href="he.html" hreflang="he">עברית</a></div></div></nav>
+<a class="sr-only" href="#problems">דילוג לתוכן</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="AI קל, לראש העמוד"><img src="assets/ai-kal-wordmark.svg" alt="AI קל" width="120" height="40"></a>
+    <nav class="nav" id="nav" aria-label="ניווט ראשי">
+      <a href="#problems">מה מציק לכם</a>
+      <a href="#how">איך זה עובד</a>
+      <a href="#tools">מה מסתתר בצ'אט</a>
+      <a href="#about">מי אנחנו</a>
+      <a href="#orgs">לארגונים</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">דברו איתנו</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">תפריט</button>
+  </div>
+</header>
 
-<header class="hero"><div class="wrap">
-<h1>We make AI <span>work in production</span></h1>
-<p>Lectures, videos, workshops, and custom AI agents, from two engineers who ship them for a living.</p>
-<a class="btn" href="#videos">Watch our videos</a><a class="btn ghost" href="#contact">Work with us</a>
-</div></header>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow load" style="--d:0">סרטונים קצרים · בעברית · בגובה העיניים</span>
+        <h1 class="display load" style="--d:1">בינה מלאכותית לבעיות של <span class="mark">כל יום</span></h1>
+        <p class="lead load" style="--d:2">אתם כבר מדברים עם הצ'אט. אנחנו מראים מה עוד מסתתר בו: משימות שרצות לבד, פרויקטים שזוכרים הכל, וכלים שנבנים בשבילכם. בלי מילים מסובכות.</p>
+        <div class="hero-actions load" style="--d:3">
+          <a class="btn btn-primary" href="#problems">מה מציק לכם?<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0"/><path d="M5 12l6 6"/><path d="M5 12l6 -6"/></svg></a>
+          <a class="btn" href="#how">איך זה עובד</a>
+        </div>
+        <div class="trust load" style="--d:4">
+          <span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg>לא צריך להבין בטכנולוגיה</span>
+          <span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg>עם הצ'אט שכבר יש לכם</span>
+          <span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg>דקה לכל פתרון</span>
+        </div>
+      </div>
+      <div class="hero-art load" style="--d:2" aria-hidden="true">
+        <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+        <img src="assets/hosts.webp" alt="" width="900" height="606">
+        <span class="bubble q" id="bq">כל חמישי, רשימת קניות?</span>
+        <span class="bubble a" id="ba"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="ans"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg><span id="bat">משימה מתוזמנת</span></span></span>
+      </div>
+    </div>
+  </section>
 
-<section id="what"><div class="wrap">
-<h2>What we do</h2><p class="sub">Practical AI engineering, explained simply and built properly.</p>
-<div class="grid offers">
-<div class="card"><div class="icon">🎤</div><h3>Lectures</h3><p>Talks on agents, MCP, RAG and AI product building for teams, meetups and classrooms.</p></div>
-<div class="card"><div class="icon">🎬</div><h3>Videos</h3><p>Short Hebrew explainers that make hard AI engineering ideas click in under a minute.</p></div>
-<div class="card"><div class="icon">🛠️</div><h3>Workshops</h3><p>Hands-on sessions where your team builds a working agent and leaves with the code.</p></div>
-<div class="card"><div class="icon">🤖</div><h3>Custom agents</h3><p>We design, build and deploy agents for your product, with evals and observability from day one.</p></div>
-</div></div></section>
+  <section class="section" id="problems">
+    <div class="wrap">
+      <div class="sec-head" data-rise>
+        <span class="eyebrow">בוחרים בעיה</span>
+        <h2 class="h2">מה מציק לכם היום?</h2>
+        <p>בחרו נושא ופתחו כרטיס. בכל פתרון יש פיצ'ר אחד שכנראה עוד לא ניסיתם. <span id="count">9 פתרונות</span></p>
+      </div>
+      <div class="chips" role="group" aria-label="סינון לפי נושא">
+        <button type="button" class="chip" data-cat="all" aria-pressed="true">הכל</button>
+        <button type="button" class="chip" data-cat="home" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg>בית</button>
+        <button type="button" class="chip" data-cat="money" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>כסף</button>
+        <button type="button" class="chip" data-cat="study" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/></svg>לימודים</button>
+        <button type="button" class="chip" data-cat="family" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/></svg>משפחה</button>
+        <button type="button" class="chip" data-cat="work" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></svg>עבודה</button>
+      </div>
+      <div class="cards">
+      <details class="card" data-cat="home" data-rise style="--i:0">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg>בית</span><span class="tool ltr">ChatGPT · Tasks</span></span>
+          <h3>רשימת קניות ותפריט לשבוע, כל שבוע מחדש</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>משימה מתוזמנת: הצ'אט עושה משהו בשבילכם בשעה קבועה, בלי שתבקשו שוב.</span></p>
+          <ol class="steps"><li><span>כותבים פעם אחת מה אתם אוכלים: צמחוני, ילדים קטנים, תקציב</span></li><li><span>מבקשים: <q>כל חמישי ב-9:00 תכין תפריט לשבוע ורשימת קניות לפי מחלקות</q></span></li><li><span>כל חמישי מגיעה התראה עם רשימה מוכנה לסופר</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="study" data-rise style="--i:1">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/></svg>לימודים</span><span class="tool ltr">Gemini · Notebooks</span></span>
+          <h3>מבחן מחר וכל החומר מפוזר בצילומים</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>מחברת (NotebookLM) לומדת רק מהחומרים שהעליתם, ולא ממציאה מהאינטרנט.</span></p>
+          <ol class="steps"><li><span>מעלים למחברת את הצילומים, הסיכומים והמצגות מהכיתה</span></li><li><span>מבקשים סקירה קולית, מעין פודקאסט קצר שאפשר לשמוע באוטובוס</span></li><li><span>מבקשים בוחן תרגול, ובודקים מה עוד לא יושב</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="money" data-rise style="--i:2">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>כסף</span><span class="tool ltr">Claude · Cowork</span></span>
+          <h3>קבלות, חשבונות ואחריות שמפוזרים בכל המחשב</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>Cowork נותן ל-Claude לעבוד ישירות על הקבצים במחשב שלכם, באישור שלכם.</span></p>
+          <ol class="steps"><li><span>פותחים את Cowork באפליקציה של Claude ובוחרים את תיקיית ההורדות</span></li><li><span>מבקשים: <q>תמיין את הקבלות לתיקיות לפי חודש, ותבנה טבלת הוצאות</q></span></li><li><span>מקבלים תיקיות מסודרות וקובץ אקסל, בלי לגרור קובץ אחד</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="family" data-rise style="--i:0">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/></svg>משפחה</span><span class="tool ltr">Claude · Projects</span></span>
+          <h3>בר מצווה, שיפוץ או חתונה, ואלף פרטים בראש</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>פרויקט זוכר את כל החומרים וההחלטות, בכל שיחה חדשה שפותחים בתוכו.</span></p>
+          <ol class="steps"><li><span>פותחים פרויקט בשם האירוע ומעלים הצעות מחיר, רשימת מוזמנים ותקציב</span></li><li><span>כל שאלה נשאלת בתוך הפרויקט, בלי להסביר הכל מההתחלה</span></li><li><span>פעם בשבוע שואלים: <q>מה עוד לא סגרנו, ומה הכי דחוף?</q></span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="money" data-rise style="--i:1">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>כסף</span><span class="tool ltr">Claude · Artifacts</span></span>
+          <h3>מחשבון תקציב משפחתי שבאמת משתמשים בו</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>Artifact הוא כלי אמיתי שנבנה בתוך השיחה: מחשבון, טבלה או משחק, עם קישור לשיתוף.</span></p>
+          <ol class="steps"><li><span>מבקשים: <q>תבנה לי מחשבון תקציב חודשי, עם הכנסות, הוצאות קבועות וחיסכון</q></span></li><li><span>ממלאים את המספרים ישר בכלי שנבנה, בלי אקסל</span></li><li><span>משתפים קישור עם בן או בת הזוג, ומעדכנים יחד</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="work" data-rise style="--i:2">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></svg>עבודה</span><span class="tool ltr">Claude · Skills</span></span>
+          <h3>כותבים את אותו סוג הודעה שוב ושוב</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>סקיל הוא מתכון קבוע: מלמדים את Claude פעם אחת, והוא עושה את זה ככה תמיד.</span></p>
+          <ol class="steps"><li><span>מראים ל-Claude 2-3 הצעות מחיר טובות שכתבתם, ומבקשים לשמור את הסגנון כסקיל</span></li><li><span>מעכשיו כותבים רק: <q>הצעת מחיר לדנה, צילומי משפחה, שעתיים</q></span></li><li><span>ההצעה יוצאת במבנה, בטון ובמחירים שלכם, בכל פעם</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="study" data-rise style="--i:0">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/></svg>לימודים</span><span class="tool ltr">Gemini · Gems</span></span>
+          <h3>מורה פרטי שלא נותן לילד את התשובה</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>Gem הוא צ'אט עם הוראות קבועות, שאפשר לפתוח מחדש בכל פעם.</span></p>
+          <ol class="steps"><li><span>יוצרים Gem בשם <q>המורה של נועה</q></span></li><li><span>כותבים לו: <q>את מורה סבלנית. לא נותנת תשובות, רק שואלת שאלות שמובילות אליהן</q></span></li><li><span>הילד פותח את ה-Gem בכל שיעורי בית, והמורה תמיד באותו טון</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="home" data-rise style="--i:1">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l-2 0l9 -9l9 9l-2 0"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"/><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"/></svg>בית</span><span class="tool ltr">Grok · Automations</span></span>
+          <h3>סיכום בוקר רק על מה שחשוב לכם</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>אוטומציה מריצה בקשה קבועה בשעה שבחרתם, ושולחת לכם את התוצאה.</span></p>
+          <ol class="steps"><li><span>יוצרים אוטומציה חדשה ב-Grok</span></li><li><span>כותבים: <q>כל בוקר ב-7:00, חמש שורות על מה שקרה בעיר שלי ובנושאים שאני עוקב אחריהם</q></span></li><li><span>קוראים סיכום קצר עם הקפה, במקום לגלול חצי שעה</span></li></ol>
+        </div>
+      </details>
+      <details class="card" data-cat="work" data-rise style="--i:2">
+        <summary>
+          <span class="meta"><span class="cat"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></svg>עבודה</span><span class="tool ltr">Claude Code</span></span>
+          <h3>דף נחיתה לעסק או לקייטנה, בלי מתכנת</h3>
+          <span class="more">ככה פותרים את זה<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6"/></svg></span>
+        </summary>
+        <div class="how-to">
+          <p class="what"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg><span>Claude Code בונה אתרים ואפליקציות קטנות בשבילכם, ואפשר לעבוד איתו מתוך האפליקציה.</span></p>
+          <ol class="steps"><li><span>מתארים במילים: <q>דף אחד לקייטנת קיץ, עם תמונות, מחירים וטופס הרשמה</q></span></li><li><span>מסתכלים על התוצאה ומבקשים שינויים כמו מעצב: <q>יותר צבעוני, כפתור גדול יותר</q></span></li><li><span>מבקשים לעלות לאוויר, ומקבלים קישור לשלוח בקבוצה</span></li></ol>
+        </div>
+      </details>
+      </div>
+      <p class="empty-note">כל שבוע אנחנו מוסיפים פתרון חדש בסרטון. יש לכם בעיה שתרצו שנפתור? <a href="#contact">כתבו לנו</a>.</p>
+    </div>
+  </section>
 
-<section id="projects"><div class="wrap">
-<h2>Real projects we have shipped</h2><p class="sub">What we teach comes from systems running in production.</p>
-<div class="grid topics">
-<div class="card"><span class="tag">Computer vision + LLM</span><h3>My Tadiran: AC recognition</h3><p>YOLO and an LLM identify any air conditioner model in seconds for thousands of users. Winner of the 2025 Israeli Marketing Association Innovation Award.</p></div>
-<div class="card"><span class="tag">OCR + GenAI</span><h3>IBI Smart OCR</h3><p>An agent that extracts data from bank documents by combining OCR with GenAI. In production, with 99% accuracy on a 1,000 document sample.</p></div>
-<div class="card"><span class="tag">Bright Data</span><h3>Agents on the live web</h3><p>Building how AI agents use the web at Bright Data: MCP server tools, agent skills for coding assistants, and framework integrations such as LangChain, with a focus on agents that finish the task reliably.</p></div>
-</div></div></section>
-<section id="topics"><div class="wrap">
-<h2>Workshop and lecture topics</h2><p class="sub">Each topic works as a 45 minute talk or a hands-on half day workshop.</p>
-<div class="grid topics">
-<div class="card"><span class="tag">Workshop</span><h3>Build your first agent</h3><p>From an LLM call to a tool-using agent: prompts, tools, loops and structured outputs, on AWS Bedrock.</p></div>
-<div class="card"><span class="tag">Lecture</span><h3>MCP explained</h3><p>What the Model Context Protocol is, how tool schemas steer an agent, and how to write tool descriptions that work.</p></div>
-<div class="card"><span class="tag">Workshop</span><h3>Agentic RAG</h3><p>Knowledge bases, metadata filtering, retrieval quality, and when an agent should search instead of guess.</p></div>
-<div class="card"><span class="tag">Lecture</span><h3>Memory for AI agents</h3><p>Short-term, long-term and episodic memory, and what to load into context and when.</p></div>
-<div class="card"><span class="tag">Workshop</span><h3>Text-to-SQL agents</h3><p>Let non-technical users explore data in plain language, with guardrails that keep queries correct and safe.</p></div>
-<div class="card"><span class="tag">Lecture</span><h3>Prompt injection and agent security</h3><p>Live demos of how agents get tricked, and the defenses that hold up in production.</p></div>
-<div class="card"><span class="tag">Workshop</span><h3>Evals, tracing and observability</h3><p>Measure agent quality before and after launch with eval-driven design and Langfuse-style tracing.</p></div>
-<div class="card"><span class="tag">Lecture</span><h3>From PoC to production</h3><p>The product side: scoping GenAI features, hitting 90%+ accuracy, and shipping with a cross-functional team.</p></div>
-<div class="card"><span class="tag">Lecture</span><h3>Coding agents and autonomous loops</h3><p>How agents read, edit and improve code on their own, and how to put them to work on your team.</p></div>
-</div></div></section>
+  <section class="band sky" id="how">
+    <div class="wrap">
+      <div class="sec-head" data-rise>
+        <span class="eyebrow">איך זה עובד</span>
+        <h2 class="h2">מהבעיה לפתרון שעובד לבד</h2>
+      </div>
+      <ol class="how">
+        <li data-rise style="--i:0"><span class="num" style="background:var(--sky)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"/></svg></span><h3 class="h3">בוחרים בעיה מהחיים</h3><p>משהו שחוזר כל שבוע, מבלבל, או פשוט לוקח יותר מדי זמן.</p></li>
+        <li data-rise style="--i:1"><span class="num" style="background:var(--lilac)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"/><path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"/><path d="M9.7 17l4.6 0"/></svg></span><h3 class="h3">מגלים את הפיצ'ר המתאים</h3><p>פרויקט, משימה מתוזמנת, סקיל או מחברת. בסרטון מראים בדיוק איפה לוחצים.</p></li>
+        <li data-rise style="--i:2"><span class="num" style="background:var(--mint)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"/><path d="M9 12l2 2l4 -4"/></svg></span><h3 class="h3">מגדירים פעם אחת</h3><p>ומשם זה עובד בשבילכם: כל שבוע, בכל שיחה, באותו סגנון.</p></li>
+      </ol>
+      <div class="safe" data-rise>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4"/><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"/><path d="M12 16h.01"/></svg>
+        <p><b>שלושה כללים לפני שמתחילים.</b> לא שולחים לצ'אט סיסמאות, מספר תעודת זהות או פרטי אשראי. כשנותנים גישה לקבצים, בוחרים רק את התיקייה שצריך. ותמיד בודקים את התוצאה, כי גם AI יכול לטעות.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="videos"><div class="wrap">
-<h2>Our videos</h2><p class="sub">Short explainers in Hebrew. Tap to play.</p>
-<div class="grid videos">
-<div class="card vid"><video controls preload="none" playsinline poster="posters/mcp-explained.jpg" src="videos/mcp-explained.mp4"></video><div class="t"><h3>What is MCP?</h3><p>How one standard plugs tools into any AI agent.</p></div></div>
-<div class="card vid"><video controls preload="none" playsinline poster="posters/mcp-tool-schema.jpg" src="videos/mcp-tool-schema.mp4"></video><div class="t"><h3>How an agent picks a tool</h3><p>Tool schemas, and why descriptions matter.</p></div></div>
-<div class="card vid"><video controls preload="none" playsinline poster="posters/agent-tools.jpg" src="videos/agent-tools.mp4"></video><div class="t"><h3>Agents and their tools</h3><p>What lets an LLM act, not just chat.</p></div></div>
-<div class="card vid"><video controls preload="none" playsinline poster="posters/autoresearch.jpg" src="videos/autoresearch.mp4"></video><div class="t"><h3>The AutoResearch loop</h3><p>An agent that reads, edits and improves code on its own.</p></div></div>
-<div class="card vid"><video controls preload="none" playsinline poster="posters/prompt-injection.jpg" src="videos/prompt-injection.mp4"></video><div class="t"><h3>Can you trick an AI?</h3><p>Prompt injection hidden in a resume.</p></div></div>
-</div></div></section>
+  <section class="section" id="tools">
+    <div class="wrap">
+      <div class="sec-head" data-rise>
+        <span class="eyebrow">מה מסתתר בצ'אט</span>
+        <h2 class="h2">שמונה דברים שהצ'אט שלכם כבר יודע לעשות</h2>
+        <p>רוב האנשים משתמשים רק בשאלה ותשובה. כל אחד מאלה חוסך שעות בשבוע.</p>
+      </div>
+      <div class="feats">
+        <div class="feat" data-rise style="--i:0"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"/></svg></span><b>Projects</b><p>פרויקט שזוכר את כל החומרים וההחלטות, בכל שיחה.</p><span class="where ltr">ChatGPT · Claude</span></div>
+        <div class="feat" data-rise style="--i:1"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"/><path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496v1.504l1 1"/></svg></span><b>משימות מתוזמנות</b><p>הצ'אט עושה משהו בשבילכם בשעה קבועה, לבד.</p><span class="where ltr">ChatGPT · Claude · Grok</span></div>
+        <div class="feat" data-rise style="--i:2"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"/></svg></span><b>Skills</b><p>מלמדים פעם אחת, והוא עושה את זה בסגנון שלכם תמיד.</p><span class="where ltr">Claude</span></div>
+        <div class="feat" data-rise style="--i:3"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/><path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/><path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/><path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"/></svg></span><b>Artifacts</b><p>מחשבונים, טבלאות ומשחקים שנבנים בתוך השיחה.</p><span class="where ltr">Claude</span></div>
+        <div class="feat" data-rise style="--i:0"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3v4a1 1 0 0 0 1 1h4"/><path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z"/><path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2"/></svg></span><b>Cowork</b><p>Claude עובד על הקבצים במחשב שלכם, באישור שלכם.</p><span class="where ltr">Claude</span></div>
+        <div class="feat" data-rise style="--i:1"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18"/><path d="M13 8l2 0"/><path d="M13 12l2 0"/></svg></span><b>Notebooks</b><p>לומד רק מהחומרים שלכם, ומכין פודקאסט ובוחן.</p><span class="where ltr">Gemini · NotebookLM</span></div>
+        <div class="feat" data-rise style="--i:2"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z"/><path d="M9.5 9h.01"/><path d="M14.5 9h.01"/><path d="M9.5 13a3.5 3.5 0 0 0 5 0"/></svg></span><b><span class="ltr">Gems</span> ו-<span class="ltr">GPTs</span></b><p>צ'אט עם הוראות קבועות, לכל תפקיד שצריך.</p><span class="where ltr">Gemini · ChatGPT</span></div>
+        <div class="feat" data-rise style="--i:3"><span class="feat-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8l-4 4l4 4"/><path d="M17 8l4 4l-4 4"/><path d="M14 4l-4 16"/></svg></span><b>Claude Code</b><p>בונה אתרים ואפליקציות קטנות, מתיאור במילים.</p><span class="where ltr">Claude</span></div>
+      </div>
+    </div>
+  </section>
 
-<section id="team"><div class="wrap">
-<h2>Who we are</h2><p class="sub">Two builders, one product mindset and one engineering mindset.</p>
-<div class="grid people">
-<div class="card person"><img src="img/nir.png" alt="Nir Sharon"><div><h3>Nir Sharon</h3><div class="role">AI Engineer at Bright Data</div>
-<ul><li>Agentic AI and cloud architecture on AWS</li><li>Previously at COMMIT: built production agents for OCR, Text-to-SQL and agentic RAG</li><li>Won the 2025 Israeli Marketing Association Innovation Award</li><li>B.Sc. Computer Science at Reichman University, MBA student at Tel Aviv University</li></ul><a class="in" href="https://www.linkedin.com/in/nir-sharon-b76b2b27a/" target="_blank" rel="noopener">LinkedIn →</a></div></div>
-<div class="card person"><img src="img/daniel.jpg" alt="Daniel Nahman"><div><h3>Daniel Nahman</h3><div class="role">Senior AI Product Manager at Wiliot</div>
-<ul><li>Previously at COMMIT: 20+ GenAI and agentic products shipped for B2B clients</li><li>6+ years from Air Force systems to AWS-based AI</li><li>M.Sc. Systems Engineering, B.Sc. Aerospace Engineering</li></ul><a class="in" href="https://www.linkedin.com/in/daniel-nahman-990b09152/" target="_blank" rel="noopener">LinkedIn →</a></div></div>
-</div></div></section>
+  <div class="ribbon" aria-hidden="true"><div class="ribbon-track"><div class="ribbon-set"><span>Projects</span><i></i><span>Tasks</span><i></i><span>Skills</span><i></i><span>Artifacts</span><i></i><span>Cowork</span><i></i><span>Notebooks</span><i></i><span>Gems</span><i></i><span>Claude Code</span><i></i><span>Automations</span><i></i><span>GPTs</span><i></i></div><div class="ribbon-set"><span>Projects</span><i></i><span>Tasks</span><i></i><span>Skills</span><i></i><span>Artifacts</span><i></i><span>Cowork</span><i></i><span>Notebooks</span><i></i><span>Gems</span><i></i><span>Claude Code</span><i></i><span>Automations</span><i></i><span>GPTs</span><i></i></div></div></div>
 
-<section id="contact"><div class="wrap" style="text-align:center">
-<h2>Let's build something</h2><p class="sub">Want a talk, a workshop, or an agent for your product?</p>
-<a class="btn" href="mailto:nshar1999@gmail.com">nshar1999@gmail.com</a>
-<a class="btn ghost" href="mailto:daniel.nahman@gmail.com">daniel.nahman@gmail.com</a>
-</div></section>
+  <section class="section hosts" id="about">
+    <div class="wrap">
+      <div class="hosts-art" data-rise><img src="assets/hosts.webp" alt="איור של דניאל וניר" width="900" height="606" loading="lazy"></div>
+      <div>
+        <div class="sec-head" data-rise>
+          <span class="eyebrow">מי אנחנו</span>
+          <h2 class="h2">דניאל וניר</h2>
+          <p>אנחנו עובדים עם AI כל יום, ומסבירים אותו כמו שהיינו מסבירים להורים שלנו: לאט, בפשטות, ועם דוגמה מהחיים.</p>
+        </div>
+        <div class="people">
+          <div class="person" data-rise><div class="row"><h3>דניאל נחמן</h3><span class="role">מנהל מוצר AI</span></div><p>השיק יותר מ-20 מוצרי AI. אוהב לקחת דבר מסובך ולהפוך אותו לשלושה צעדים.</p><a href="https://www.linkedin.com/in/daniel-nahman-990b09152" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M8 11l0 5"/><path d="M8 8l0 .01"/><path d="M12 16l0 -5"/><path d="M16 16v-3a2 2 0 0 0 -4 0"/></svg>לינקדאין</a></div>
+          <div class="person" data-rise><div class="row"><h3>ניר שרון</h3><span class="role">מהנדס AI</span></div><p>בונה סוכני AI שעובדים בעולם האמיתי. זכה בפרס חדשנות על אפליקציה שמזהה מזגן מתמונה.</p><a href="https://www.linkedin.com/in/nir-sharon-b76b2b27a" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M8 11l0 5"/><path d="M8 8l0 .01"/><path d="M12 16l0 -5"/><path d="M16 16v-3a2 2 0 0 0 -4 0"/></svg>לינקדאין</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>© 2026 Production AI · Nir Sharon &amp; Daniel Nahman</footer>
+  <section class="band lilac" id="orgs">
+    <div class="wrap orgs">
+      <div>
+        <div class="sec-head" data-rise>
+          <span class="eyebrow">לארגונים ולקהילות</span>
+          <h2 class="h2">מביאים את AI קל אליכם</h2>
+          <p>לצוות, למתנ"ס, לבית הספר או לכנס. בשפה פשוטה, עם תרגול על בעיות אמיתיות.</p>
+        </div>
+        <div class="offer">
+          <div data-rise><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4l18 0"/><path d="M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-10"/><path d="M12 16l0 4"/><path d="M9 20l6 0"/><path d="M8 12l3 -3l2 2l3 -3"/></svg><p><b>הרצאה של 45 דקות</b><span>מה AI יכול לעשות בשבילכם כבר מחר, עם דוגמאות מהחיים.</span></p></div>
+          <div data-rise><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"/><path d="M14.5 5.5l4 4"/><path d="M12 8l-5 -5l-4 4l5 5"/><path d="M7 8l-1.5 1.5"/><path d="M16 12l5 5l-4 4l-5 -5"/><path d="M16 17l-1.5 1.5"/></svg><p><b>סדנה מעשית של חצי יום</b><span>כל משתתף יוצא עם כלים שעובדים לו, בטלפון שלו.</span></p></div>
+          <div data-rise><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0 -3 -3.85"/></svg><p><b>לצוותים טכניים</b><span>סדנאות עומק על סוכני AI, <span class="ltr">MCP</span> ו-<span class="ltr">RAG</span>, למי שבונה מוצרים.</span></p></div>
+        </div>
+      </div>
+      <div class="contact" id="contact" data-rise>
+        <h2 class="h3" style="font-size:28px;font-weight:700">בואו נדבר</h2>
+        <p style="color:var(--ink-muted)">ספרו לנו על הקבוצה שלכם, או על בעיה שתרצו שנפתור בסרטון.</p>
+        <div class="mail-row"><code>daniel.nahman@gmail.com</code><button class="copy" type="button" data-copy="daniel.nahman@gmail.com">העתקה</button></div>
+        <div class="mail-row"><code>nshar1999@gmail.com</code><button class="copy" type="button" data-copy="nshar1999@gmail.com">העתקה</button></div>
+        <a class="btn btn-primary" href="mailto:daniel.nahman@gmail.com,nshar1999@gmail.com?subject=AI%20%D7%A7%D7%9C"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"/><path d="M3 7l9 6l9 -6"/></svg>שליחת מייל</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="assets/ai-kal-wordmark.svg" alt="AI קל" width="102" height="34"></a>
+    <span class="tag">בגובה העיניים · © 2026 דניאל נחמן וניר שרון</span>
+  </div>
+</footer>
+<script src="app.js" defer></script>
 </body>
 </html>
